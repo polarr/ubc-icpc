@@ -1,0 +1,114 @@
+<script lang="ts">
+	import Button from '$lib/components/ui/button/button.svelte';
+	import * as Card from '$lib/components/ui/card/index.js';
+	import { Badge } from '$lib/components/ui/badge/index.js';
+	import * as Avatar from '$lib/components/ui/avatar/index.js';
+	import * as DropdownMenu from '$lib/components/ui/dropdown-menu/index';
+	import * as Tooltip from '$lib/components/ui/tooltip';
+	import * as Breadcrumb from '$lib/components/ui/breadcrumb/index.js';
+    import * as Collapsible from '$lib/components/ui/collapsible/index';
+	import { Separator } from '$lib/components/ui/separator';
+	import { GithubLogo } from 'svelte-radix';
+	import {
+		Activity,
+		Star,
+		ChevronDown,
+		Plus,
+		Circle,
+		Heart,
+		Gauge,
+		Slash,
+		Hash,
+		ChevronRight,
+
+		ChevronsUpDown
+
+	} from '@lucide/svelte';
+	import * as config from '$lib/siteConfig';
+
+	import katex from 'katex';
+
+	
+</script>
+
+<section
+	class="mx-auto flex max-w-[980px] flex-col items-center gap-2 py-8 text-center md:py-12 lg:py-20"
+>
+	<h1 class="text-3xl font-bold leading-tight tracking-tighter md:text-4xl lg:text-5xl lg:leading-[1.1]">
+		Enjoy solving tough problems? Want to sharpen your coding skills?
+	</h1>
+</section>
+
+<section class="grid grid-cols-1 gap-4 max-w-(--breakpoint-lg) px-4">
+	<Card.Root class="flex flex-col w-full justify-between">
+		<Card.Header>
+			<Card.Title>History</Card.Title>
+		</Card.Header>
+		<Card.Content class="space-y-2 tracking-tight">
+			<p>
+				Every year, the ICPC draws students from over 3,000 universities around the world to rack their brains in intense, mind-twisting competition. Over the past decade, the ICPC Pacific Northwest regional competition has been dominated by UBC and Stanford. Most years, one of our teams advances to the World Finals: an unforgettable week abroad with chances to meet the world's top collegiate programmers!
+			</p>
+			<p>
+				We are a group of students and alumni from various disciplines who practice algorithmic programming, with the main goal of competing in the ICPC. We also welcome students who wish to simply improve their problem solving, algorithm design and coding skills and collaborate with like-minded people. Contests are hard, but we stand to learn a great deal by challenging ourselves!
+			</p>
+			<p>
+				Even if you don't make it into the prestigious World Finals, practicing will do wonders for your coding ability, not to mention the ability to ace technical software interviews! Past UBC contestants have landed internships and full-time jobs at companies including and not limited to Google, Microsoft, Facebook, and Amazon. The abstract problem solving aspect of these contests can also serve as a stepping stone towards full-fledged computer science research: past contestants have gone on to complete PhDs at places like Stanford, MIT, and CMU.
+			</p>
+			<p>
+				What are you waiting for? Join the club!
+			</p>
+		</Card.Content>
+	</Card.Root>
+	<Card.Root class="flex w-full flex-col justify-between">
+		<Card.Header>
+			<Card.Title>How It Works</Card.Title>
+		</Card.Header>
+		<Card.Content class="space-y-2 tracking-tight">
+			<p>
+				The ICPC is a competition between teams. Each team consists of three contestants. The teams are presented with a set of problems. The objective is to solve as many of the problems as possible, under a strict time limit. For each team a score will be determined, based on how quickly problems are solved and how many attempts it took to solve a problem. The team with the best score at the end of the time limit wins the competition.
+			</p>
+			<p>
+				This year's World Finals will take place in Moscow, Russia, in June 2020.
+			</p>
+			<p>
+				The Pacific Northwest regional competition is held in mid-November. We send five of our teams (15 people) to this competition to compete with teams from SFU, Washington, Stanford, Berkeley and more. Winning teams from the regional will advance to the North America Championships, and the winners there win a trip to the World Finals, to represent UBC and Canada on the competitive programming stage.
+			</p>
+		</Card.Content>
+		<Card.Footer class="flex justify-between">
+			<Button target="_blank" rel="noreferrer" href={config.links.vodb + '/contribute'} variant="outline">Contribute</Button>
+			<Button target="_blank" rel="noreferrer" href={config.links.vodb}>Access VODB</Button>
+		</Card.Footer>
+	</Card.Root>
+	<Card.Root class="flex w-full flex-col justify-between">
+		<Card.Header>
+			<Card.Title>What We Do</Card.Title>
+		</Card.Header>
+		<Card.Content class="space-y-2 tracking-tight">
+			<p>
+				Please join our Discord or contact one of us directly.
+			</p>
+			<p>
+				In the beginning of the academic year we hold tryouts. Everyone is welcome to participate, the more the merrier.
+			</p>
+			<p>
+				We hold regular practice sessions, in which everyone is again welcome to participate. Usually these will be held on Saturdays and Wednesdays. There may also be tutorial sessions for newcomers. Pizza will be served during most of our meetings.
+			</p>
+			<p>
+				IMPORTANT: Please note that certain requirements must be fulfilled in order for you to be eligible to participate in official competitions. Visit the official rules (be sure you're reading the current ones) and see the Eligibility Decision Tree.
+			</p>
+			<p>
+				Those interested in competing officially must also:
+			</p>
+			<ul class="list-disc list-inside ml-4">
+				<li>Regularly attend practice sessions</li>
+				<li>Commit to attending the regionals in mid-November, and possibly the North America Championship in the Spring and the World Finals in the Summer/Fall</li>
+				<li>Enjoy solving problems of algorithmic or mathematical nature</li>
+				<li>Learn to solve problems under time pressure</li>
+			</ul>
+		</Card.Content>
+		<Card.Footer class="flex justify-between">
+			<Button target="_blank" rel="noreferrer" href={config.links.vodb + '/contribute'} variant="outline">Contribute</Button>
+			<Button target="_blank" rel="noreferrer" href={config.links.vodb}>Access VODB</Button>
+		</Card.Footer>
+	</Card.Root>
+</section>
