@@ -34,41 +34,36 @@
 
     let { member }: Props = $props();
 
-    let { display_name, username, role, title, description, avatar, href, sponsor_href, inactive } = member;
+    let { display_name, username, role, title, description, avatar, href, codeforces } = member;
 
     const roleTitle = (role: memberRole) => {
-        if (role == "executive"){
-            return null;
-        }
-
         switch(role){
-            case 'developer':
-                return "Developer";
-            case 'db-maintainer':
-                return "Database Maintainer";
-            case 'db-volunteer':
-                return "Database Volunteer";
+            case 'coach':
+                return "Team Coach";
+            default: 
+            case 'contestant':
+                return "Contestant";
         }
     };
 </script>
 
-<Card.Root class={"flex flex-col shrink justify-between" + (inactive ? " bg-muted":"")}>
+<Card.Root class={"flex flex-col shrink justify-between"}>
     <Card.Header>
-        <div class={"flex items-center gap-4" + (inactive ? " text-muted-foreground":"")}>
-            <Avatar.Root class={"flex h-9 w-9" + (inactive ? " opacity-50":"")}>
+        <div class={"flex items-center gap-4"}>
+            <Avatar.Root class={"flex h-9 w-9"}>
                 <Avatar.Image src={avatar} alt="Avatar" />
-                <Avatar.Fallback>{(display_name?.[0] ?? username[0]).toUpperCase()}</Avatar.Fallback>
+                <Avatar.Fallback class="text-lg">{(display_name?.[0] ?? username?.[0]).toUpperCase()}</Avatar.Fallback>
             </Avatar.Root>
             <div>
                 <Card.Title>
-                    {#if display_name}
-                        {display_name} <span class="text-muted-foreground text-sm">(@{username})</span>
+                    {#if username}
+                        {display_name} <span class="text-muted-foreground text-sm">({username})</span>
                     {:else}
-                        {username}
+                        {display_name}
                     {/if}
                 </Card.Title>
                 <Card.Description>
-                    {(inactive ? "Former ":"") + (roleTitle(role) ?? title)}
+                    {title} · {roleTitle(role)}
                 </Card.Description>
             </div>
         </div>
@@ -79,10 +74,9 @@
         </p>
     </Card.Content>
     <Card.Footer class="flex">
-        {#if inactive}
-            <Button class="ml-auto" disabled>Learn More</Button>
-        {:else}
-            <Button href={href} class="ml-auto">Learn More</Button>
-        {/if}
+        <Button variant="outline" href={codeforces}>
+            <img src="/codeforces.svg" class="h-4 w-4 dark:invert dark:brightness-0" alt="Codeforces Logo">
+        </Button>
+        <Button href={href} class="ml-auto">Learn More</Button>
     </Card.Footer>
 </Card.Root>

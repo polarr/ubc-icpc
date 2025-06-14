@@ -54,8 +54,8 @@
 	<div class="container flex h-14 max-w-(--breakpoint-2xl) items-center">
 		<div class="mr-4 hidden md:flex">
 			<a href="/" class="mr-6 flex items-center space-x-2">
-				<img src="/vo.png" alt="Virtual Olympiad Logo" class="h-7 w-7" />
-				<span class="hidden select-none tracking-tight font-bold sm:inline-block">{config.site.name}</span>
+				<img src="/logo.svg" alt="Logo" class="h-7 w-7" />
+				<span class="ml-1 hidden select-none tracking-tight font-bold sm:inline-block">{config.site.name}</span>
 			</a>
 			<nav class="flex items-center gap-6 text-sm">
 				{#each config.nav as {title, href}}
@@ -74,10 +74,6 @@
 
 		<MobileNav />
 		<div class="ml-auto flex items-center">
-			<Button href={config.links.github} variant="ghost" size="sm">
-				<GithubLogo class="h-4 w-4" />
-				<span class="sr-only">Github</span>
-			</Button>
 			<Button onclick={toggleMode} variant="ghost" size="sm">
 				<Sun class="h-4 w-4 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
 				<Moon
@@ -145,7 +141,7 @@
 					rel="noreferrer"
 					class="font-medium underline underline-offset-4"
 				>
-					polarity</a
+					Charles Ran</a
 				>. The source code is available on
 				<a
 					href={config.links.github}

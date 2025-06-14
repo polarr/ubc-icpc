@@ -1,16 +1,15 @@
 declare global {
-    type memberRole = "executive" | "developer" | "db-maintainer" | "db-volunteer";
+    type memberRole = "contestant" | "coach";
 
     interface Member {
-        display_name?: string;
-        username: string;
+        display_name: string;
+        username?: string;
         role: memberRole;
         title?: string;
-        avatar: string;
+        avatar?: string;
         description?: string;
-        href: string;
-        sponsor_href?: string;
-        inactive?: boolean;
+        href?: string;
+        codeforces?: string;
     }
 
     type EventType = "competition" | "tryout" | "other";
@@ -20,7 +19,8 @@ declare global {
         description?: string;
         registration?: string;
         link?: string;
-        date?: string;
+        date: string;
+        location?: string;
         type?: EventType;
     }
 }

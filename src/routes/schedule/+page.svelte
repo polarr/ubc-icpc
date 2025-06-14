@@ -1,14 +1,5 @@
 <script lang="ts">
 	import Button from '$lib/components/ui/button/button.svelte';
-	import * as Card from '$lib/components/ui/card/index.js';
-	import { Badge } from '$lib/components/ui/badge/index.js';
-	import * as Avatar from '$lib/components/ui/avatar/index.js';
-	import * as DropdownMenu from '$lib/components/ui/dropdown-menu/index';
-	import * as Tooltip from '$lib/components/ui/tooltip';
-	import * as Breadcrumb from '$lib/components/ui/breadcrumb/index.js';
-    import * as Collapsible from '$lib/components/ui/collapsible/index';
-	import { Separator } from '$lib/components/ui/separator';
-	import { GithubLogo } from 'svelte-radix';
 	import {
 		Activity,
 		Star,
@@ -20,32 +11,35 @@
 		Slash,
 		Hash,
 		ChevronRight,
-
 		ChevronsUpDown,
         Calendar
 	} from '@lucide/svelte';
-	import * as config from '$lib/siteConfig';
-
-	import katex from 'katex';
-	import { Content } from '$lib/components/ui/drawer';
 
     import pb from '$lib/pocketbase';
 
-    import EventCard from './EventCard.svelte';
-	import { onMount } from 'svelte';
+    import { onMount } from 'svelte';
 
-    let events: Event[] = [];
+    import EventCard from '$lib/components/EventCard.svelte';
+	import EventCardSkeleton from '$lib/components/EventCardSkeleton.svelte';
+
+    let upcomingItems: Event[] = [], pastItems: Event[] = [];
     let loading = true;
 
     onMount(async () => {
         try {
             // Fetch all events from both 'practices' and 'events' collections, sorted by date descending
-            let [practices, otherEvents] = await Promise.all([
-                pb.collection('practices').getFullList({ sort: '-date' }) as Promise<Event[]>,
-                pb.collection('events').getFullList({ sort: '-date' }) as Promise<Event[]>
+            let [upcomingPractices, pastPractices, upcomingEvents, pastEvents] = await Promise.all([
+                pb.collection('practices').getFullList({ sort: '+date', filter: 'date>@todayStart' }) as Promise<Event[]>,
+                pb.collection('practices').getFullList({ sort: '-date', filter: 'date<=@todayStart'}) as Promise<Event[]>,
+                pb.collection('events').getFullList({ sort: '+date', filter: 'date>@todayStart' }) as Promise<Event[]>,
+                pb.collection('events').getFullList({ sort: '-date', filter: 'date<=@todayStart' }) as Promise<Event[]>
             ]);
+
+            // Merge and sort by date ascending
+            upcomingItems = [...upcomingPractices, ...upcomingEvents].sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
+
             // Merge and sort by date descending
-            events = [...practices, ...otherEvents].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+            pastItems = [...pastPractices, ...pastEvents].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
         } catch (e) {
             console.error('Failed to fetch events from PocketBase:', e);
         } finally {
@@ -61,23 +55,25 @@
         Schedule
     </h1>
     <div class="flex w-full items-center justify-center space-x-4">
-        <Button href="#">
+        <Button variant="secondary" href="#">
             <Calendar />
             Add to Google Calendar
         </Button>
     </div>
 </section>
 
-<section class="max-w-(--breakpoint-xl) flex flex-col space-y-4 text-2xl sm:text-4xl">
-    <h1 class="font-bold leading-tight tracking-tighter text-center">
+<section class="max-w-full w-(--breakpoint-md) flex flex-col space-y-4 text-2xl sm:text-4xl text-center">
+    <h1 class="font-bold leading-tight tracking-tighter">
         Upcoming Practices and Events
     </h1>
 
-    <section class="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3 px-4">
+    <section class="grid grid-cols-1 gap-4 px-4 pb-10 text-sm">
         {#if loading}
-            <div>Loading...</div>
+            <EventCardSkeleton />
+        {:else if upcomingItems.length == 0}
+            <p>No upcoming practices or events.</p>
         {:else}
-            {#each events as event}
+            {#each upcomingItems as event}
                 {#if event?.date && new Date(event.date) >= new Date()}
                     <EventCard {event}/>
                 {/if}
@@ -85,17 +81,19 @@
         {/if}
     </section>
 
-    <h1 class="font-bold leading-tight tracking-tighter text-center">
+    <h1 class="font-bold leading-tight tracking-tighter">
         Past Practices and Events
     </h1>
 
-    <section class="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3 px-4">
+    <section class="grid grid-cols-1 gap-2 px-4 text-sm">
         {#if loading}
-            <div>Loading...</div>
+            <EventCardSkeleton/>
+        {:else if pastItems.length == 0}
+            <p>No past practices or events.</p>
         {:else}
-            {#each events as event}
+            {#each pastItems as event, i}
                 {#if !event?.date || new Date(event.date) < new Date()}
-                    <EventCard {event}/>
+                    <EventCard {event} minimal={i>4}/>
                 {/if}
             {/each}
         {/if}

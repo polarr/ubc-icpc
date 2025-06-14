@@ -8,7 +8,7 @@
 	import * as Breadcrumb from '$lib/components/ui/breadcrumb/index.js';
     import * as Collapsible from '$lib/components/ui/collapsible/index';
 	import { Separator } from '$lib/components/ui/separator';
-	import { GithubLogo } from 'svelte-radix';
+	import { DiscordLogo, GithubLogo } from 'svelte-radix';
 	import {
 		Activity,
 		Star,
@@ -32,21 +32,22 @@
 </script>
 
 <section
-	class="mx-auto flex max-w-[980px] flex-col items-center gap-2 py-8 text-center md:py-12 lg:py-20"
+	class="mx-auto flex max-w-[980px] flex-col items-center gap-2 py-8 text-center md:py-12"
 >
-	<h1 class="text-3xl font-bold leading-tight tracking-tighter md:text-4xl lg:text-5xl lg:leading-[1.1]">
-		Enjoy solving tough problems? Want to sharpen your coding skills?
+	<h1 class="text-3xl font-bold leading-tight tracking-tighter md:text-4xl lg:leading-[1.1]">
+		Enjoy solving tough problems?<br/>
+        Want to sharpen your coding skills?
 	</h1>
 </section>
 
-<section class="grid grid-cols-1 gap-4 max-w-(--breakpoint-lg) px-4">
+<section class="grid grid-cols-1 gap-4 max-w-(--breakpoint-lg) px-4 pb-10">
 	<Card.Root class="flex flex-col w-full justify-between">
 		<Card.Header>
 			<Card.Title>History</Card.Title>
 		</Card.Header>
 		<Card.Content class="space-y-2 tracking-tight">
 			<p>
-				Every year, the ICPC draws students from over 3,000 universities around the world to rack their brains in intense, mind-twisting competition. Over the past decade, the ICPC Pacific Northwest regional competition has been dominated by UBC and Stanford. Most years, one of our teams advances to the World Finals: an unforgettable week abroad with chances to meet the world's top collegiate programmers!
+				Every year, the <a class="underline underline-offset-4" href="https://en.wikipedia.org/wiki/International_Collegiate_Programming_Contest">International Collegiate Programming Competition</a> (ICPC) draws students from over 3,000 universities around the world to compete in solving tough algorithmic problems. Over the past decade, the ICPC Pacific Northwest regional competition has been dominated by UBC and Stanford. Most years, one of our teams advances to the World Finals: an unforgettable week abroad with chances to meet the world's top collegiate programmers!
 			</p>
 			<p>
 				We are a group of students and alumni from various disciplines who practice algorithmic programming, with the main goal of competing in the ICPC. We also welcome students who wish to simply improve their problem solving, algorithm design and coding skills and collaborate with like-minded people. Contests are hard, but we stand to learn a great deal by challenging ourselves!
@@ -58,6 +59,16 @@
 				What are you waiting for? Join the club!
 			</p>
 		</Card.Content>
+		<Card.Footer class="flex gap-2">
+            <Button target="_blank" rel="noreferrer" href={config.links.discord}>
+                <DiscordLogo class="h-4 w-4" />
+                Discord
+            </Button>
+            <Button target="_blank" rel="noreferrer" href={config.links.codeforces}>
+                <img src="/codeforces.svg" class="h-4 w-4 invert dark:invert-0 brightness-0 dark:brightness-100" alt="Codeforces Logo">
+                Codeforces
+            </Button>
+		</Card.Footer>
 	</Card.Root>
 	<Card.Root class="flex w-full flex-col justify-between">
 		<Card.Header>
@@ -68,16 +79,9 @@
 				The ICPC is a competition between teams. Each team consists of three contestants. The teams are presented with a set of problems. The objective is to solve as many of the problems as possible, under a strict time limit. For each team a score will be determined, based on how quickly problems are solved and how many attempts it took to solve a problem. The team with the best score at the end of the time limit wins the competition.
 			</p>
 			<p>
-				This year's World Finals will take place in Moscow, Russia, in June 2020.
-			</p>
-			<p>
 				The Pacific Northwest regional competition is held in mid-November. We send five of our teams (15 people) to this competition to compete with teams from SFU, Washington, Stanford, Berkeley and more. Winning teams from the regional will advance to the North America Championships, and the winners there win a trip to the World Finals, to represent UBC and Canada on the competitive programming stage.
 			</p>
 		</Card.Content>
-		<Card.Footer class="flex justify-between">
-			<Button target="_blank" rel="noreferrer" href={config.links.vodb + '/contribute'} variant="outline">Contribute</Button>
-			<Button target="_blank" rel="noreferrer" href={config.links.vodb}>Access VODB</Button>
-		</Card.Footer>
 	</Card.Root>
 	<Card.Root class="flex w-full flex-col justify-between">
 		<Card.Header>
@@ -85,16 +89,13 @@
 		</Card.Header>
 		<Card.Content class="space-y-2 tracking-tight">
 			<p>
-				Please join our Discord or contact one of us directly.
-			</p>
-			<p>
-				In the beginning of the academic year we hold tryouts. Everyone is welcome to participate, the more the merrier.
-			</p>
-			<p>
 				We hold regular practice sessions, in which everyone is again welcome to participate. Usually these will be held on Saturdays and Wednesdays. There may also be tutorial sessions for newcomers. Pizza will be served during most of our meetings.
 			</p>
 			<p>
-				IMPORTANT: Please note that certain requirements must be fulfilled in order for you to be eligible to participate in official competitions. Visit the official rules (be sure you're reading the current ones) and see the Eligibility Decision Tree.
+				Around the beginning of the academic year we hold tryouts. Everyone is welcome to participate, the more the merrier.
+			</p>
+			<p>
+				<b>IMPORTANT</b>: Please note that certain requirements must be fulfilled in order for you to be eligible to participate in official competitions. Visit the <a href="https://icpc.global/regionals/rules" class="underline underline-offset-4">official rules</a> (be sure you're reading the current ones) and see the Eligibility Decision Tree.
 			</p>
 			<p>
 				Those interested in competing officially must also:
@@ -106,9 +107,5 @@
 				<li>Learn to solve problems under time pressure</li>
 			</ul>
 		</Card.Content>
-		<Card.Footer class="flex justify-between">
-			<Button target="_blank" rel="noreferrer" href={config.links.vodb + '/contribute'} variant="outline">Contribute</Button>
-			<Button target="_blank" rel="noreferrer" href={config.links.vodb}>Access VODB</Button>
-		</Card.Footer>
 	</Card.Root>
 </section>
