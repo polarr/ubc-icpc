@@ -121,11 +121,17 @@
 	<p class="text-muted-foreground max-w-[750px] text-lg text-balance sm:text-xl">
 		We eat problems and pizza.
 	</p>
-	<div class="flex w-full items-center justify-center space-x-2 py-4 md:pb-10">
-		<Button target="_blank" rel="noreferrer" href={config.links.github}>
-			<GithubLogo class="h-4 w-4" />
-			GitHub
-		</Button>
+	<div class="relative mb-10 flex w-fit items-center justify-center space-x-2 py-4">
+		<img
+			src="/join-discord-mobile.svg"
+			alt="Join our discord!"
+			class="absolute bottom-[-80px] left-[-30px] h-36 sm:hidden dark:fill-green-100"
+		/>
+		<img
+			src="/join-discord.svg"
+			alt="Join our discord!"
+			class="absolute bottom-[-60px] left-[-127px] hidden h-36 sm:block dark:fill-green-100"
+		/>
 		<Button target="_blank" rel="noreferrer" href={config.links.discord}>
 			<DiscordLogo class="h-4 w-4" />
 			Discord
@@ -181,8 +187,8 @@
 			<p>
 				To improve our algorithmic programming skills and prepare for the ICPC, we hold regular
 				practice sessions. Everyone is welcome to participate! Usually these will be held on
-				Saturdays and Wednesdays. There may also be tutorial sessions for newcomers. Pizza will be
-				served during most of our meetings.
+				Saturdays and Wednesdays. Pizza will be served during most of our meetings. We'll also be
+				offering an undergraduate course, CPSC 490, on advanced DSA topics.
 			</p>
 			<p>
 				Even if you don't make it into the prestigious ICPC World Finals, practicing will do wonders
@@ -197,70 +203,102 @@
 	</div>
 </section>
 
-<section
-	class="my-20 flex flex-col items-center space-y-8"
->
-	<h1 class="px-2 text-2xl md:text-4xl leading-tight font-bold tracking-tighter text-center">Join Our Community!</h1>
+<section class="my-20 flex flex-col items-center space-y-8">
+	<h1 class="px-2 text-center text-2xl leading-tight font-bold tracking-tighter md:text-4xl">
+		Join Our Community!
+	</h1>
 	<div
 		class="mx-auto grid max-w-[680px] grid-cols-1 gap-8 px-8 lg:max-w-(--breakpoint-lg) lg:grid-cols-[1fr_0fr_400px]"
 	>
 		<div class="flex flex-col gap-2 text-pretty">
 			<p>
-				Whether you're just getting started or already love solving tough problems, the UBC Competitive Programming Club is the perfect place to grow your skills alongside others who share a passion for algorithmic programming. Join our Discord server and Codeforces group to connect with fellow coders, ask questions, and stay updated on all our events.
+				Whether you're just getting started or already love solving tough problems, the UBC
+				Competitive Programming Club is the perfect place to grow your skills alongside others who
+				share a passion for algorithmic programming. Join our Discord server and Codeforces group to
+				connect with fellow coders, ask questions, and stay updated on all our events.
 			</p>
-            <div class="flex space-x-2 mt-2 mb-8">
-                <Button variant="outline" target="_blank" rel="noreferrer" href={config.links.discord}>
-                    <DiscordLogo class="h-4 w-4" />
-                    Discord
-                </Button>
-                <Button variant="outline" target="_blank" rel="noreferrer" href={config.links.codeforces}>
-                    <img
-                        src="/codeforces.svg"
-                        class="h-4 w-4 dark:brightness-0 dark:invert"
-                        alt="Codeforces Logo"
-                    />
-                    Codeforces
-                </Button>
-            </div>
+			<div class="mt-2 mb-8 flex space-x-2">
+				<Button variant="outline" target="_blank" rel="noreferrer" href={config.links.discord}>
+					<DiscordLogo class="h-4 w-4" />
+					Discord
+				</Button>
+				<Button variant="outline" target="_blank" rel="noreferrer" href={config.links.codeforces}>
+					<img
+						src="/codeforces.svg"
+						class="h-4 w-4 dark:brightness-0 dark:invert"
+						alt="Codeforces Logo"
+					/>
+					Codeforces
+				</Button>
+			</div>
 			<p>
-				Additionally, explore our curated <a href="/resources" class="text-accent-foreground w-fit underline underline-offset-4">resources</a> to sharpen your algorithms, data structures, and problem-solving techniques. You can also browse our <a href="achievements" class="text-accent-foreground w-fit underline underline-offset-4">past achievements</a> to see how we have historically performed. One day you might <a href="/team" class="text-accent-foreground w-fit underline underline-offset-4">represent UBC</a> at the ICPC North American Championships or World Finals!
+				Additionally, explore our curated <a
+					href="/resources"
+					class="text-accent-foreground w-fit underline underline-offset-4">resources</a
+				>
+				to sharpen your algorithms, data structures, and problem-solving techniques. You can also browse
+				our
+				<a href="achievements" class="text-accent-foreground w-fit underline underline-offset-4"
+					>past achievements</a
+				>
+				to see how we have historically performed. One day you might
+				<a href="/team" class="text-accent-foreground w-fit underline underline-offset-4"
+					>represent UBC</a
+				> at the ICPC North American Championships or World Finals!
 			</p>
 		</div>
-        <Separator orientation="vertical" />
-        <div class="flex flex-col items-center">
-            <h2 class="text-3xl leading-tight font-bold tracking-tighter">FAQ</h2>
-            <Accordion.Root type="single" class="w-full" value="item-1">
-                <Accordion.Item value="item-1">
-                    <Accordion.Trigger>Do I need experience to join?</Accordion.Trigger>
-                    <Accordion.Content class="flex flex-col gap-4 text-balance">
-                        <p>Not at all! We welcome all skill levels.</p>
-                    </Accordion.Content>
-                </Accordion.Item>
-                <Accordion.Item value="item-2">
-                    <Accordion.Trigger>How often do you meet?</Accordion.Trigger>
-                    <Accordion.Content class="flex flex-col gap-4 text-balance">
-                        <p>We usually host meetings every Wednesday and Saturday. Check our <a class="text-accent-foreground w-fit underline underline-offset-4" href="/schedule">schedule</a> for the most up-to-date information.</p>
-                    </Accordion.Content>
-                </Accordion.Item>
-                <Accordion.Item value="item-3">
-                    <Accordion.Trigger>Is it free to join?</Accordion.Trigger>
-                    <Accordion.Content class="flex flex-col gap-4 text-balance">
-                        <p>Yes—joining the club is completely free. Our ICPC teams are also fully funded!</p>
-                    </Accordion.Content>
-                </Accordion.Item>
-                <Accordion.Item value="item-4">
-                    <Accordion.Trigger>How can I prepare for competitions?</Accordion.Trigger>
-                    <Accordion.Content class="flex flex-col gap-4 text-balance">
-                        <p>Check out our resources, attend our sessions, and join in on group practices—we'll help you improve step by step.</p>
-                    </Accordion.Content>
-                </Accordion.Item>
-                <Accordion.Item value="item-5">
-                    <Accordion.Trigger>Can I still join mid-year?</Accordion.Trigger>
-                    <Accordion.Content class="flex flex-col gap-4 text-balance">
-                        <p>Absolutely! It's never too late to start.</p>
-                    </Accordion.Content>
-                </Accordion.Item>
-            </Accordion.Root>
-        </div>
+		<Separator orientation="vertical" />
+		<div class="flex flex-col items-center">
+			<h2 class="text-3xl leading-tight font-bold tracking-tighter">FAQ</h2>
+			<Accordion.Root type="single" class="w-full">
+				<Accordion.Item>
+					<Accordion.Trigger>Do I need experience to join?</Accordion.Trigger>
+					<Accordion.Content class="flex flex-col gap-4 text-balance">
+						<p>Not at all! We welcome all skill levels.</p>
+					</Accordion.Content>
+				</Accordion.Item>
+				<Accordion.Item>
+					<Accordion.Trigger>How are the ICPC teams selected?</Accordion.Trigger>
+					<Accordion.Content class="flex flex-col gap-4 text-balance">
+						<p>
+							Around the beginning of the academic year we hold two tryout contests to select the
+							ICPC teams. See <a href="/about#what-we-do" class="text-accent-foreground w-fit underline underline-offset-4">here</a> for more details.
+						</p>
+					</Accordion.Content>
+				</Accordion.Item>
+				<Accordion.Item>
+					<Accordion.Trigger>How often do you meet?</Accordion.Trigger>
+					<Accordion.Content class="flex flex-col gap-4 text-balance">
+						<p>
+							We usually host meetings every Wednesday and Saturday. Check our <a
+								class="text-accent-foreground w-fit underline underline-offset-4"
+								href="/schedule">schedule</a
+							> for the most up-to-date information.
+						</p>
+					</Accordion.Content>
+				</Accordion.Item>
+				<Accordion.Item>
+					<Accordion.Trigger>Can I still join mid-year?</Accordion.Trigger>
+					<Accordion.Content class="flex flex-col gap-4 text-balance">
+						<p>Absolutely! It's never too late to start.</p>
+					</Accordion.Content>
+				</Accordion.Item>
+				<Accordion.Item>
+					<Accordion.Trigger>Is it free to join?</Accordion.Trigger>
+					<Accordion.Content class="flex flex-col gap-4 text-balance">
+						<p>Yes—joining the club is completely free. Our ICPC teams are also fully funded!</p>
+					</Accordion.Content>
+				</Accordion.Item>
+				<Accordion.Item>
+					<Accordion.Trigger>How can I prepare for competitions?</Accordion.Trigger>
+					<Accordion.Content class="flex flex-col gap-4 text-balance">
+						<p>
+							Check out our resources, attend our sessions, and join in on group practices—we'll
+							help you improve step by step.
+						</p>
+					</Accordion.Content>
+				</Accordion.Item>
+			</Accordion.Root>
+		</div>
 	</div>
 </section>

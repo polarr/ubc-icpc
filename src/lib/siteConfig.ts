@@ -6,7 +6,7 @@ const links = {
 };
 
 const site = {
-	name: 'UBC ICPC Club',
+	name: 'UBC Competitive Programming Club',
 	url: 'https://ubc-icpc.polarity.sh',
 	ogImage: 'https://ubc-icpc.polarity.sh/logo@512x512.png',
 	description: 'Home of the UBC Competitive Programming Club. We eat problems and pizza.',
