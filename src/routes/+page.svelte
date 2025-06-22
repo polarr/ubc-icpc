@@ -155,7 +155,7 @@
 		>View full schedule</Button
 	>
 
-	<section class="grid w-full grid-cols-1 gap-4 px-4 pb-10 text-sm">
+	<section class="grid w-full grid-cols-1 gap-2 px-4 pb-10 text-sm">
 		{#if loading}
 			<EventCardSkeleton />
 		{:else if upcoming == 0}

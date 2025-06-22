@@ -7,14 +7,13 @@
 		class: className,
 		children,
 		...restProps
-	}: WithElementRef<HTMLAttributes<HTMLDivElement>> & {} = $props();
+	}: WithElementRef<HTMLAttributes<HTMLElement>> = $props();
 </script>
 
-<div
-	bind:this={ref}
-	data-slot="select-label"
-	class={cn("text-muted-foreground px-2 py-1.5 text-xs", className)}
+<nav
 	{...restProps}
+	bind:this={ref}
+	class={cn("absolute inset-x-0 top-0 flex w-full items-center justify-between gap-1", className)}
 >
 	{@render children?.()}
-</div>
+</nav>

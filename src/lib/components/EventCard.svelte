@@ -4,9 +4,12 @@
 	import DOMPurify from 'dompurify';
 	import { Badge } from '$lib/components/ui/badge/index.js';
 	import { cn } from '$lib/utils';
+	import { ChevronDown } from 'svelte-radix';
 
 	let { event, minimal = false } = $props();
 	let { title, description, registration, link, date, location, type } = event;
+
+    let expanded = $state(!minimal);
 
 	const isPastDay = () => {
 		let currTime = new Date();
@@ -52,7 +55,7 @@
 </script>
 
 <Card.Root class={'flex flex-col justify-between text-left ' + getStyle()}>
-	<Card.Header>
+	<Card.Header class={(minimal ? 'p-4 ':'')}>
         <div class='flex items-center gap-6'>
             <div>
                 <Card.Title>
@@ -74,20 +77,20 @@
                 </div>
             </div>
             {#if minimal}
-                <Button disabled={!link} class="ml-auto" target="_blank" rel="noreferrer" href={link}>
-                    Join
+                <Button onclick={()=> expanded = !expanded} class="ml-auto" variant="ghost">
+                    <ChevronDown class="size-4"/>
                 </Button>
             {/if}
         </div>
 	</Card.Header>
-	{#if !minimal}
+	{#if expanded}
 		{#if description}
-			<Card.Content>
+			<Card.Content class={(minimal ? 'p-4 ':'')}>
 				<p class="text-sm">{@html DOMPurify.sanitize(description)}</p>
 			</Card.Content>
 		{/if}
 
-		<Card.Footer class="flex gap-2">
+		<Card.Footer class={'flex gap-2 ' + (minimal ? 'p-4 ':'')}>
 			<Button
 				disabled={isPastDay() || !registration}
 				variant="outline"
