@@ -73,7 +73,7 @@
 		},
 		{
 			title: 'Project Euler',
-			description: 'A collection of challenging mathematical/computer programming problems that require more than just mathematical insights to solve.',
+			description: 'A collection of challenging competitive programming problems that are mathematical in nature.',
 			url: 'https://projecteuler.net/'
 		}
 	];

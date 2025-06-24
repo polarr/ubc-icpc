@@ -12,6 +12,12 @@ declare global {
         codeforces?: string;
     }
 
+    interface Team {
+        year: string;
+        name: string;
+        members: Member[];
+    }
+
     type EventType = "competition" | "tryout" | "other";
     interface Event {
         id: string;
@@ -22,6 +28,17 @@ declare global {
         date: string;
         location?: string;
         type?: EventType;
+    }
+
+    interface Result {
+        year: string;
+        team: string;
+        regionalsPlacement?: number;
+        regionalsAward?: string;
+        nacPlacement?: number | null;
+        nacAward?: string | null;
+        wfPlacement?: number;
+        wfAward?: string;
     }
 }
 

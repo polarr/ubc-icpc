@@ -101,9 +101,9 @@
 <section
 	class="mx-auto flex max-w-[980px] flex-col items-center gap-2 px-2 py-8 text-center md:py-12 md:pb-8 lg:py-24 lg:pb-20"
 >
-	<div class="flex">
+	<div class="flex h-100px">
 		<img src="/ubc-blue.png" alt="UBC Crest" class="h-12 dark:brightness-0 dark:invert" />
-		<Separator class="mx-3" orientation="vertical" />
+		<Separator class="mx-3 !h-auto" orientation="vertical" />
 		<img src="/logo.svg" alt="Logo" class="h-12 w-12" />
 	</div>
 	<p class="text-muted-foreground max-w-[750px] text-lg text-balance sm:text-xl">
@@ -238,7 +238,7 @@
 				>
 				to sharpen your algorithms, data structures, and problem-solving techniques. You can also browse
 				our
-				<a href="achievements" class="text-accent-foreground w-fit underline underline-offset-4"
+				<a href="history" class="text-accent-foreground w-fit underline underline-offset-4"
 					>past achievements</a
 				>
 				to see how we have historically performed. One day you might

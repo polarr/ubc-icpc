@@ -118,12 +118,12 @@
 	<h1 class="text-3xl leading-tight font-bold tracking-tighter md:text-6xl lg:leading-[1.1]">
 		Schedule
 	</h1>
-	<div class="flex w-full items-center justify-center space-x-4">
+	<!-- <div class="flex w-full items-center justify-center space-x-4">
 		<Button variant="secondary" href="#">
 			<Calendar />
 			Add to Google Calendar
 		</Button>
-	</div>
+	</div> -->
 </section>
 
 <section
