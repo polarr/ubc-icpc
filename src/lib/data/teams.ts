@@ -25,7 +25,7 @@ const teams: Team[] = [
 				display_name: 'Xingyu Zhou',
 				username: 'cnjzxy',
 				role: 'coach',
-				title: 'PhD'
+				title: 'PhD Year 2'
 			}
 		]
 	},
@@ -49,16 +49,23 @@ const teams: Team[] = [
 				display_name: 'Vincent Ling',
 				username: '..vince',
 				role: 'contestant',
-				title: 'Undergrad Year'
+				title: 'Undergrad Year 5'
 			},
 			{
 				display_name: 'Xingyu Zhou',
 				username: 'cnjzxy',
 				role: 'coach',
-				title: 'PhD'
+				title: 'PhD Year 1'
 			}
 		]
 	},
+    {   
+        year: '2022-2023', 
+        name: 'D1 TADA', 
+        members: [
+            
+        ] 
+    },
 	{   
         year: '2021-2022', 
         name: 'O(mae wa mou shindeiru)', 

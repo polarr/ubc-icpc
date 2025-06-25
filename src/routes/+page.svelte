@@ -132,7 +132,7 @@
 			alt="Join our discord!"
 			class="absolute bottom-[-60px] left-[-127px] hidden h-36 sm:block dark:fill-green-100"
 		/>
-		<Button target="_blank" rel="noreferrer" href={config.links.discord}>
+		<Button target="_blank" rel="noreferrer" href={config.links.discord} class="z-10">
 			<DiscordLogo class="h-4 w-4" />
 			Discord
 		</Button>

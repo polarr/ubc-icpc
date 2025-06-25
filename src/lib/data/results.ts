@@ -1,14 +1,28 @@
 const results: Result[] = [
+    {
+		year: '2023-2024',
+		team: 'UBSEA',
+		regionalsPlacement: 1,
+        nacPlacement: 4,
+        wfPlacement: 51
+	},
+    {
+		year: '2022-2023',
+		team: 'D1 TADA',
+		regionalsPlacement: 12
+	},
 	{
 		year: '2021-2022',
 		team: 'O(mae wa mou shindeiru)',
-		regionalsPlacement: 8
+		regionalsPlacement: 8,
+        nacPlacement: 21
 	},
 	{
 		year: '2020-2021',
 		team: 'UBC************',
 		regionalsPlacement: 2,
-		nacPlacement: 5
+		nacPlacement: 5,
+        wfPlacement: 123
 	},
 	{
 		year: '2019-2020',

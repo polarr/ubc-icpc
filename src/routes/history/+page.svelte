@@ -64,9 +64,9 @@
 				Best Placements
 			</h2>
 			<div class = "grid grid-cols-1 sm:grid-cols-3 gap-4 p-4">
-				<img src="/plaque-regionals.svg" class="w-[200px]" />
-				<img src="/plaque-nac.svg" class="w-[200px]" />
-				<img src="/plaque-wf.svg" class="w-[200px]" />
+				<img src="/plaque-regionals.svg" alt="Best Regionals Placement" class="w-[200px]" />
+				<img src="/plaque-nac.svg" alt="Best NA Championship Placement" class="w-[200px]" />
+				<img src="/plaque-wf.svg" alt="Best World Finals Placement" class="w-[200px]" />
 			</div>
 		</div>
 	</div>
