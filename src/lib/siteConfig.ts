@@ -7,8 +7,8 @@ const links = {
 
 const site = {
 	name: 'UBC Competitive Programming Club',
-	url: 'https://ubc-icpc.polarity.sh',
-	ogImage: 'https://ubc-icpc.polarity.sh/logo@512x512.png',
+	url: 'https://icpc.cs.ubc.ca',
+	ogImage: 'https://icpc.cs.ubc.ca/meta@1200x630.png',
 	description: 'Home of the UBC Competitive Programming Club. We eat problems and pizza.',
 	keywords: `UBC,University of British Columbia,ICPC,Leetcode,Intercollegiate Programing Contest,Competitive Programming,DSA,Data Structures,Algorithms,Codeforces`
 };
