@@ -73,8 +73,9 @@
 	<meta property="og:title" content={config.site.name} />
 	<meta property="og:url" content={config.site.url} />
 	<meta property="og:description" content={config.site.description} />
-	<meta property="og:image" content={config.site.ogImage} />
-	<meta property="og:type" content="website" />
+	<meta property="og:image" content={config.site.cardLogo} />
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="og:type" content="website" />
 </svelte:head>
 
 <ModeWatcher defaultMode={'light'} />

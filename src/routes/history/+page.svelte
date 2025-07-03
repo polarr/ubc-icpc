@@ -45,14 +45,14 @@
 </script>
 
 <section
-	class="mx-auto flex w-max max-w-full flex-col items-center gap-2 py-8 text-center md:py-12 lg:py-20">
+	class="mx-auto flex w-full flex-col items-center gap-2 py-8 text-center md:py-12 lg:py-20">
 	<h1
 		class="text-3xl leading-tight font-bold tracking-tighter md:text-4xl lg:text-5xl lg:leading-[1.1]">
 		History
 	</h1>
-	<div class="relative mt-20 mb-30">
+	<div class="w-full flex flex-col items-center relative mt-20 mb-30">
 		<div
-			class="pointer-events-none absolute -top-16 -bottom-16 left-1/2 z-0 w-screen -translate-x-1/2">
+			class="pointer-events-none absolute -top-16 -bottom-16 left-1/2 z-0 w-full -translate-x-1/2 overflow-hidden">
 			<img
 				src="/plaques.png"
 				alt="ICPC Large Background"

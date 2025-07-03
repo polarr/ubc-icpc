@@ -20,10 +20,10 @@
 	</p>
 </section>
 
-<section class="mb-8 flex w-[400px] max-w-full flex-col space-y-8 md:w-(--breakpoint-md)">
-	<div class="relative mt-20 mb-30">
+<section class="mb-8 flex items-center w-full flex-col space-y-8 px-1">
+	<div class="w-full relative mt-20 mb-30">
 		<div
-			class="pointer-events-none absolute -top-16 -bottom-16 left-1/2 z-0 w-screen -translate-x-1/2"
+			class="pointer-events-none absolute -top-16 -bottom-16 left-1/2 z-0 w-full -translate-x-1/2"
 		>
 			<img
 				src="/icpc-large.png"
@@ -32,8 +32,8 @@
 				style="max-width: none;"
 			/>
 		</div>
-		<div class="relative z-10">
-			<Card.Root id={currentTeam.year.slice(-4)} class="bg-card/70 dark:bg-card/80">
+		<div class="w-full relative z-10">
+			<Card.Root id={currentTeam.year.slice(-4)} class="bg-card/70 dark:bg-card/80 w-full max-w-[400px] md:max-w-(--breakpoint-md) mx-auto">
 				<Card.Header class="p-4 pt-6 pb-0">
 					<Card.Title class="text-center">
 						{currentTeam.year} Team
@@ -54,7 +54,7 @@
 	</div>
 
 	{#each teams.slice(1) as team}
-		<Card.Root id={team.year.slice(-4)}>
+		<Card.Root id={team.year.slice(-4)} class="w-full max-w-[400px] md:max-w-(--breakpoint-md)">
 			<Card.Header class="p-4 pt-6 pb-0">
 				<Card.Title class="text-center">
 					{team.year} Team
