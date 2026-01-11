@@ -31,7 +31,8 @@
 
 	const parseResult = (result: number | null | undefined) => {
 		if (result === null) return 'N/A';
-		if (!result) return '-';
+        if (result === 0) return 'TBD'
+		if (!result) return 'DNQ';
 		// Convert number to ordinal string
 		const n = Number(result);
 		const mod10 = n % 10,

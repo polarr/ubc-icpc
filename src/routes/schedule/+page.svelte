@@ -198,7 +198,7 @@
 					<p>No past practices or events.</p>
 				{:else}
 					{#each paginatedPastItems as event, i}
-						<EventCard {event} minimal={page > 1 || i > 4} />
+						<EventCard {event} minimal />
 					{/each}
 				{/if}
 			{/key}

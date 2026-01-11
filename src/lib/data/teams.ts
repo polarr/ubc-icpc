@@ -1,4 +1,39 @@
 const teams: Team[] = [
+    {
+		year: '2025-2026',
+		name: 'Diamond Dust',
+		members: [
+			{
+				display_name: 'Alexander Wen',
+				username: 'snowlucario',
+				role: 'contestant',
+				title: 'Master\'s Year 1',
+                codeforces: 'https://codeforces.com/profile/SnowLucario_Z'
+			},
+			{
+				display_name: 'Charles Ran',
+				username: 'cran',
+				role: 'contestant',
+				title: 'Undergrad Year 2',
+                codeforces: 'https://codeforces.com/profile/cran',
+                href: 'https://polarity.sh'
+			},
+			{
+				display_name: 'Rain Yang',
+				username: 'ryazimn',
+				role: 'contestant',
+				title: 'Undergrad Year 3',
+                codeforces: 'https://codeforces.com/profile/Ryazimn',
+                href: 'https://ryazimn.github.io/'
+			},
+			{
+				display_name: 'Xingyu Zhou',
+				username: 'cnjzxy',
+				role: 'coach',
+				title: 'PhD Year 3'
+			}
+		]
+	},
 	{
 		year: '2024-2025',
 		name: 'Forgetful functors',

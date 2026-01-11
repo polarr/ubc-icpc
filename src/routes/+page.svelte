@@ -187,8 +187,7 @@
 			<p>
 				To improve our algorithmic programming skills and prepare for the ICPC, we hold regular
 				practice sessions. Everyone is welcome to participate! Usually these will be held on
-				Saturdays and Wednesdays. Pizza will be served during most of our meetings. We'll also be
-				offering an undergraduate course, CPSC 490, on advanced DSA topics.
+				Saturdays and Wednesdays. Pizza will be served during most of our meetings.
 			</p>
 			<p>
 				Even if you don't make it into the prestigious ICPC World Finals, practicing will do wonders

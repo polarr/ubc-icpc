@@ -1,5 +1,12 @@
 const results: Result[] = [
     {
+		year: '2025-2026',
+		team: 'Diamond Dust',
+		regionalsPlacement: 3,
+        nacPlacement: 0,
+        wfPlacement: 0
+	},
+    {
 		year: '2024-2025',
 		team: 'Forgetful Functors',
 		regionalsPlacement: 2,

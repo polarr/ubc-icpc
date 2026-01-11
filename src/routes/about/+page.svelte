@@ -115,7 +115,6 @@
 				Usually these will be held on Saturdays and Wednesdays. Pizza will be served during most of
 				our meetings.
 			</p>
-			<p>We'll also be offering an undergraduate course, CPSC 490, on advanced DSA topics.</p>
 			<p>
 				Around the beginning of the academic year we hold two tryout contests to select the ICPC teams. Everyone is welcome to
 				participate, the more the merrier.
