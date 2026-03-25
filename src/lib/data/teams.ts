@@ -8,7 +8,8 @@ const teams: Team[] = [
 				username: 'snowlucario',
 				role: 'contestant',
 				title: 'Master\'s Year 1',
-                codeforces: 'https://codeforces.com/profile/SnowLucario_Z'
+                codeforces: 'https://codeforces.com/profile/SnowLucario_Z',
+                href: 'https://alxwen711.github.io/'
 			},
 			{
 				display_name: 'Charles Ran',
@@ -16,7 +17,7 @@ const teams: Team[] = [
 				role: 'contestant',
 				title: 'Undergrad Year 2',
                 codeforces: 'https://codeforces.com/profile/cran',
-                href: 'https://polarity.sh'
+                href: 'https://charlesran.com'
 			},
 			{
 				display_name: 'Rain Yang',

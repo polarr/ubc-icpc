@@ -3,7 +3,7 @@ const results: Result[] = [
 		year: '2025-2026',
 		team: 'Diamond Dust',
 		regionalsPlacement: 3,
-        nacPlacement: 0,
+        nacPlacement: 11,
         wfPlacement: 0
 	},
     {
